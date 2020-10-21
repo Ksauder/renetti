@@ -1,0 +1,12 @@
+# docker file for the build of the app container
+FROM python:3.7
+
+# copy python src code to directory on image
+COPY ./src /app
+# set working directory
+WORKDIR /app
+
+# install the dependencies
+RUN pip install -r requirements.txt
+
+CMD [ "python", "./main.py"]
